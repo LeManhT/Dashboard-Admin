@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
-import { Dialog, DialogContent, DialogHeader } from "./dialog";
-import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./dialog";
 
 export interface IModalProps {
   title: string;
@@ -27,8 +26,11 @@ export const Modal : React.FC<IModalProps> = ({
     <DialogContent>
         <DialogHeader>
             <DialogTitle>{title}</DialogTitle>
-            <DialogDescription>{title}</DialogDescription>
+            <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
+        <div>
+            {children}
+        </div>
     </DialogContent>
   </Dialog>;
 }
